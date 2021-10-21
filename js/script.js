@@ -9,16 +9,16 @@
 
 const km = prompt('Per quanti km vuoi viaggiare?');
 
-// const int = parseInt("km");
+const intkm = parseInt(km);
 
-// console.log(int);
+console.log(intkm);
 
 
 console.log(km);
 
 document.getElementById('km').innerHTML = 
 `
-<p> Questo viaggio ha una lunghezza di ${km} km</p> 
+<p> Questo viaggio ha una lunghezza di ${intkm} km</p> 
 `
 
 const anni = prompt('Quanti anni hai?');
@@ -32,7 +32,7 @@ document.getElementById('anni').innerHTML =
 
 
 
-const numb = (km * 0.21);
+const numb = (intkm * 0.21);
 
 console.log(numb);
 
