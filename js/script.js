@@ -9,11 +9,16 @@
 
 const km = prompt('Per quanti km vuoi viaggiare?');
 
+// const int = parseInt("km");
+
+// console.log(int);
+
+
 console.log(km);
 
 document.getElementById('km').innerHTML = 
 `
-<p> Voglio viaggiare per ${km} km</p> 
+<p> Questo viaggio ha una lunghezza di ${km} km</p> 
 `
 
 const anni = prompt('Quanti anni hai?');
@@ -22,10 +27,9 @@ console.log(anni);
 
 document.getElementById('anni').innerHTML =
 `
-<p> Ho ${anni} anni</p> 
+<p> L'utente ha ${anni} anni</p> 
 `
 
-// const prezzobiglietto = 
 
 
 const numb = (km * 0.21);
@@ -43,6 +47,31 @@ document.getElementById('numb').innerHTML =
 `
 
 
+const età = anni;
 
+if (età < 18) {
+  const sconto20 = (rounded - (rounded / 100 * 20));
+  const rounded20 = Math.round((sconto20 + Number.EPSILON) * 100) / 100;
 
+  document.getElementById('sconto').innerHTML =
+  `
+  <p> L'utente ha diritto allo sconto per minorenni <br>
+  Il prezzo scontato è ${rounded20} </p>
+  `;
+
+} else if(età >= 18 && età < 60) {
+  document.getElementById('sconto').innerHTML =
+  `
+  <p> L'utente non ha diritto allo sconto </p>
+  ` ;
+
+} else {
+  const sconto40 = (rounded - (rounded / 100 * 40));
+  const rounded40 = Math.round((sconto40 + Number.EPSILON) * 100) / 100;
+  document.getElementById('sconto').innerHTML =
+  `
+  <p> L'utente ha diritto allo sconto per gli over60 <br>
+  Il prezzo scontato è ${rounded40}€ </p>
+  `;
+}
 
