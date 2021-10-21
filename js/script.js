@@ -37,9 +37,10 @@ const numb = (intkm * 0.21);
 console.log(numb);
 
 
-const rounded = Math.round((numb + Number.EPSILON) * 100) / 100;
-console.log(rounded);
+// const rounded = Math.round((numb + Number.EPSILON) * 100) / 100;
+// console.log(rounded);
 
+const rounded = numb.toFixed(2);
 
 document.getElementById('numb').innerHTML =
 `
@@ -51,7 +52,7 @@ const età = anni;
 
 if (età < 18) {
   const sconto20 = (rounded - (rounded / 100 * 20));
-  const rounded20 = Math.round((sconto20 + Number.EPSILON) * 100) / 100;
+  const rounded20 = sconto20.toFixed(2);
 
   document.getElementById('sconto').innerHTML =
   `
@@ -67,7 +68,7 @@ if (età < 18) {
 
 } else {
   const sconto40 = (rounded - (rounded / 100 * 40));
-  const rounded40 = Math.round((sconto40 + Number.EPSILON) * 100) / 100;
+  const rounded40 = sconto40.toFixed(2);
   document.getElementById('sconto').innerHTML =
   `
   <p> L'utente ha diritto allo sconto per gli over60 <br>
